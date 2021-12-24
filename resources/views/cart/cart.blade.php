@@ -80,7 +80,7 @@
                                     @csrf
                                     @method("PUT")
                                     <select name="quantity" id="quantity" onchange="this.form.submit()" value="{{ $value['quantity'] }}">
-                                        @for ($i = 1; $i <= 10; $i++) <option value="{{ $i }}" {{ $value['quantity'] == $i ? 'selected' : ''}}>
+                                        @for ($i = 1; $i <= 10; $i++) <option value="{{ $i }}" {{ $value['quantity'] == $i ? 'selected' : '' }}>
                                             {{ $i }}
                                             </option>
                                             @endfor
@@ -89,7 +89,9 @@
                             </td>
 
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-900"> $ {{ $value['quantity'] * $value['price'] }} </div>
+                                <div class="text-sm text-gray-900"> $
+                                    {{ $value['quantity'] * $value['price'] }}
+                                </div>
                             </td>
 
                             <td class="px-6 whitespace-nowrap text-right text-sm font-medium">

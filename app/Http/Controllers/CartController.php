@@ -21,7 +21,7 @@ class CartController extends Controller
         if (isset($cartItems[$id])) {
             $cartItems[$id]['quantity']++;
         } else {
-            $cartItems['id'] = [
+            $cartItems[$id] = [
                 "image_path" => $product->image_path,
                 "name" => $product->name,
                 "brand" => $product->brand,
@@ -29,6 +29,8 @@ class CartController extends Controller
                 "price" => $product->price,
                 "quantity" => 1
             ];
+            session()->put('cartItems', $cartItems);
+ 
         }
 
         session()->put('cartItems', $cartItems);
