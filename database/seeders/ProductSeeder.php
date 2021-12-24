@@ -33,11 +33,19 @@ class ProductSeeder extends Seeder
                 'shipping_cost' => '25',
                 'image_path' => 'storage/product2.png'
             ],
+            [
+                'name' => 'Dell Alienware x17 R1',
+                'details' => '17.3 inch, 16GB, DDR4 SDRAM, 256GB',
+                'description' => 'Dell Alienware x17 R1 is a Windows 10 Home laptop with a 17.30-inch display that has a resolution of 1920x1080 pixels. It is powered by a Core i7 processor and it comes with 16GB of RAM. The Dell Alienware x17 R1 packs 256GB of SSD storage.',
+                'brand' => 'Dell',
+                'price' => '3900',
+                'shipping_cost' => '25',
+                'image_path' => 'storage/product3.png'
+            ]
         ];
 
         foreach ($products as $key => $value) {
             Product::create($value);
         }
-
     }
 }
